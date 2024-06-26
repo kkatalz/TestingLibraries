@@ -1,6 +1,7 @@
 import org.example.Main;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Assumptions;
@@ -26,6 +27,10 @@ public class JUnitSimpleTest {
         Main main = new Main();
         int result = main.subtract(5, 3);
         assertEquals(result, 2, "5 - 3 should equal 2");
+
+        // Використання AssertJ для перевірки результату
+        assertThat(result).withFailMessage("5 - 3 should equal 2").isEqualTo(3);
+
     }
 
 
