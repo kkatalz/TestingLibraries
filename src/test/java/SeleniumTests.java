@@ -41,15 +41,16 @@ public class SeleniumTests {
     public void testWikipediaLogo() {
         driver.get("https://www.wikipedia.org");
 
-        WebElement logo = driver.findElement(By.cssSelector(".central-featured-logo"));
+        WebElement logo = driver.findElement(By.cssSelector(".central-featured-"));
         assertTrue(logo.isDisplayed(), "Wikipedia logo should be displayed");
     }
 
     @Test
-    public void testGithubTitle() {
-        driver.get("https://github.com");
+    public void testDictionaryTitle() {
+        driver.get("https://dictionary.cambridge.org/");
 
-        WebElement heading = driver.findElement(By.tagName("h1"));
-        assertEquals("Where the world builds software", heading.getText(), "Heading should be 'Where the world builds software'");
+        WebElement logo = driver.findElement(By.cssSelector(".i-amphtml-replaced-content"));
+
+        assertEquals(logo.isDisplayed(), "Dictionary logo should be displayed");
     }
 }
